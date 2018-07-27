@@ -61,4 +61,21 @@ describe('Reducers', () => {
       next
     ).toHaveBeenCalledWith(action);
   });
+
+  it('Test a request error', () => {
+    const errorState = {
+      heroes: [],
+      loading: false,
+      error: 'Não foi possível buscar os dados',
+    };
+
+    expect(
+      heroReducer(
+        initialState,
+        {
+          type: HERO.REQUEST_FAIL,
+        }
+      )
+    ).toEqual(errorState);
+  });
 });
