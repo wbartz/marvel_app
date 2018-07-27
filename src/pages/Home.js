@@ -11,12 +11,11 @@ import reducer from '../reducers';
 import devtools from 'remote-redux-devtools';
 
 const CLIENT = axios.create({
-  baseURL: 'http://gateway.marvel.com/v1/public/',
-  // baseURL: '',
+  baseURL: 'https://gateway.marvel.com/v1/public/',
   responseType: 'json'
 });
 
-const STORE = createStore(reducer, devtools(applyMiddleware(axiosMiddleware(CLIENT))));
+const STORE = createStore(reducer, applyMiddleware(axiosMiddleware(CLIENT)));
 
 class List extends React.Component {
   render () {

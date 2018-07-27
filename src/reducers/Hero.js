@@ -9,13 +9,11 @@ const initialState = {
 const heroReducer = (state = initialState, action) => {
   switch (action.type) {
     case HERO.REQUEST:
-      console.log('HERO_REQUEST')
       return {
         ...state,
         loading: true,
       }
     case HERO.REQUEST_SUCCESS:
-      console.log('HERO_REQUEST_SUCCESS')
       return {
         ...state,
         loading: false,
@@ -25,8 +23,7 @@ const heroReducer = (state = initialState, action) => {
         ],
       }
     case HERO.REQUEST_FAIL:
-      // console.log('HERO.REQUEST_FAIL')
-      console.log(action)
+      console.log('HERO.REQUEST_FAIL')
       return {
         ...state,
         loading: false,
